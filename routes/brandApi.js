@@ -4,7 +4,8 @@ const  mongoose = require('mongoose');
 const Brand =  require('../model/brand');
 const multer = require('multer');
 
-mongoose.connect('mongodb://127.0.0.1:27017/elecdb');
+mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/elecdb');
+
 
 router.get('/' ,(req,res) =>{
 

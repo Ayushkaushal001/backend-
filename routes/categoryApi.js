@@ -5,8 +5,8 @@ const Category = require('./../model/category')
 const multer = require('multer')
 
 
+mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/elecdb');
 
-mongoose.connect('mongodb://127.0.0.1:27017/elecdb');
 
 router.get('/',(req,res) => {
 	Category.find({},(err,data)=>{

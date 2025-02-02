@@ -5,8 +5,8 @@ const router = express.Router()
 
 
 const Subcategory = require('./../model/subcategory')
+mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/elecdb');
 
-mongoose.connect('mongodb://127.0.0.1:27017/elecdb');
 
 router.get('/' ,(req,res) =>{
 

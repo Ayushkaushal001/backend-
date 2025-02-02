@@ -5,7 +5,7 @@ const puppeteer = require('puppeteer');
 
 const  PriceComparison = require ('../model/priceComparison.js');
 
-mongoose.connect('mongodb://127.0.0.1:27017/elecdb');
+mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/elecdb');
 
 // Function to scrape price from the page
 async function scrapePrice(url, selector) {
